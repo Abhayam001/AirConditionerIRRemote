@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Mi AC Remote</string>
+    <string name="subtitle">Universal IR Air Conditioner Controller</string>
+    <string name="ir_ready">IR Blaster Ready (Xiaomi Hardware)</string>
+    <string name="ir_missing">No IR Blaster Detected (Demo Simulation Active)</string>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Permission to transmit IR signals via the phone's infrared blaster (Xiaomi / Android standard) -->
+    <uses-permission android:name="android.permission.TRANSMIT_IR" />
+
+    <!-- Haptic feedback for tactile remote button presses -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Feature requirement: Ir Blaster (set to false so app can run with diagnostic simulation mode if unavailable) -->
+    <uses-feature
+        android:name="android.hardware.ConsumerIr"
+        android:required="false" />
+
+    <application
+        android:name=".AcRemoteApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MiACRemote">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.MiACRemote">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
