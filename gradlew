@@ -81,4 +81,11 @@ cd "$SAVED" >/dev/null
 
 CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
 
+if [ ! -f "$CLASSPATH" ]; then
+    echo "gradle-wrapper.jar not found, downloading..."
+    mkdir -p "$APP_HOME/gradle/wrapper"
+    curl -fsSL https://raw.githubusercontent.com/gradle/gradle/v8.10.2/gradle/wrapper/gradle-wrapper.jar -o "$CLASSPATH" 2>/dev/null || \
+    curl -fsSL https://services.gradle.org/distributions/gradle-8.10.2-bin.zip -o "$APP_HOME/gradle/wrapper/gradle.zip"
+fi
+
 exec "$JAVACMD" "-Dorg.gradle.appname=$APP_BASE_NAME" -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"

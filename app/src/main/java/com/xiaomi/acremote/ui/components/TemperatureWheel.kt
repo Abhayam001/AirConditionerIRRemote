@@ -136,10 +136,9 @@ fun TemperatureWheel(
                             containerColor = DarkSurface,
                             labelColor = TextSecondary
                         ),
-                        border = FilterChipDefaults.filterChipBorder(
-                            enabled = isPowerOn,
-                            selected = temperature == preset,
-                            borderColor = if (temperature == preset) activeGlowColor else DarkCardBorder
+                        border = androidx.compose.foundation.BorderStroke(
+                            1.dp,
+                            if (temperature == preset) activeGlowColor else DarkCardBorder
                         )
                     )
                 }

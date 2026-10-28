@@ -129,7 +129,7 @@ fun QuickPairingDialog(
                         onClick = onNextCode,
                         modifier = Modifier.weight(1f),
                         colors = ButtonDefaults.outlinedButtonColors(contentColor = TextSecondary),
-                        border = ButtonDefaults.outlinedButtonBorder.copy(brush = androidx.compose.ui.graphics.SolidColor(DarkCardBorder)),
+                        border = androidx.compose.foundation.BorderStroke(1.dp, DarkCardBorder),
                         shape = RoundedCornerShape(12.dp)
                     ) {
                         Text("No, Next")
